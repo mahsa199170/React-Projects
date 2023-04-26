@@ -12,15 +12,16 @@ import Conditionals3 from './components/Conditionals3';
 import TaskList from './components/TaskList';
 import UseEffect from './components/UseEffect';
 import UseEffectCleanup from './components/UseEffectCleanup';
+import ControlledInputs from './components/form/ControlledInputs';
+import MultipleControlledInput from './components/form/MultipleControlledInput';
+import UnControlledInputs from './components/form/UnControlledInputs';
 
 
 
 const App = () => {
   return (
     <div>
-      {/* <TaskList /> */}
-      {/* <UseEffect /> */}
-      <UseEffectCleanup />
+      <UnControlledInputs />
      
      
     </div>
