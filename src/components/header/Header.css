@@ -1,0 +1,134 @@
+/* .headerContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.logo, .menue,.toggle{
+    width: 10%;
+
+}
+
+.imgLogo{
+    width: 100%;
+} */
+
+/* .off{
+    font-size: 5rem;
+   
+} */
+
+/* .on{
+    font-size: 5rem;
+    position: relative;
+} */
+
+/* put a line after header elements */
+
+/* .headerContainer::after{
+    content: "";
+  width: 70%;
+  height: 0.5px;
+  background-color: black;
+  bottom: -5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+    
+} */
+
+
+/* .items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle{
+    position: relative;
+}
+
+.sun{
+    color: gold;
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 40%;
+    right: 68%;
+    z-index: 1;
+}
+
+.moon{
+    color: pink;
+    font-size: 1.5em;
+    position: absolute;
+
+    margin-bottom: auto;
+    bottom: 40%;
+    left: 8%;
+    z-index: 1;
+}
+ */
+
+
+
+
+header{
+    position: relative;
+    background-color: var(--background);
+    width:100%;
+}
+
+
+header::after{
+  content: "";
+  width: 1000px;
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background-color: var(--foreground);
+  transform: translateX(-50%);
+    
+}
+
+
+nav a{
+    text-decoration: none;
+    color: var(--foreground)
+}
+
+nav li{
+    font-size: 16px;
+    list-style: none;
+    margin: 0 10px;
+}
+
+.toggle-btn{
+    width: 45px;
+    height: 23px;
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    position: relative;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.ball{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    top:1.5px;
+    left:1.2px;
+    position: absolute;
+    transition: all 0.2s linear;
+}
+
+.move{
+    transform: translateX(22px);
+}
