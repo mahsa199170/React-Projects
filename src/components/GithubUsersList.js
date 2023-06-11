@@ -1,45 +1,13 @@
 import React,{useState, useEffect} from 'react'
+import useFetch from './customHook/useFetch'
 
 const url = "https://api.github.com/users"
 
 const GithubUsersList = () => {
 
-    const [users, setUsers] = useState([])
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(false);
+    const {data, error, isLoading} = useFetch(url)
 
-
-    //here we want to use async wait(not the fetch)
-
-    const getUsers = async()=>{
-        setIsLoading(true);
-        setError(false)
-
-        try {
-            setIsLoading(true)
-        const response = await fetch(url)
-        if (!response.ok){
-            throw new Error("Something went wrong")
-        }
-        const data = await response.json();
-        // console.log(data)
-        setUsers(data)
-        setIsLoading(false)
-
-        } catch(err){
-            console.log(err.message)
-            setError(true)
-            setIsLoading(false)
-
-        }
-        
-
-    }
-
-
-    useEffect(()=>{
-        getUsers()
-    },[])
+    
   return (
     <div className='--bg-primary --py2'>
         <div className="container">
@@ -54,7 +22,7 @@ const GithubUsersList = () => {
              }
              <div className="--grid-25 --py">
                 {error ? (<h4 className='--text-light'>Something wnet wrong.</h4>): (
-                    users.map((user)=>{
+                    data.map((user)=>{
                         const {id, login, avatar_url, html_url} = user
                         return (
                             <div key = {id} className='--card --bg-light --p --flex-start'>
