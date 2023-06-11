@@ -1,10 +1,14 @@
+import { useContext } from 'react'
+import ThemeContext from '../../context/themeContext'
 import React from 'react'
-import hero from "../../assets/register.svg"
+import hero from "../../assets/register.svg" 
 import "./Hero.css"
 
-const Hero = ({myTheme}) => {
+const Hero = () => {
+
+  const {theme} = useContext(ThemeContext)
   return ( 
-    <section className='hero' data-theme = {myTheme}>
+    <section className='hero' data-theme = {theme}>
 
       <div className="container --grid-15">
 

@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import ThemeContext from '../../context/themeContext'
 import React,{useState} from 'react'
 // import {BsToggleOn} from "react-icons/bs"
 import {MdToggleOff,MdToggleOn} from "react-icons/md"
@@ -9,19 +11,22 @@ import logo from "../../assets/logo.png"
 
 
 
-const Header = ({myTheme, onToggleTheme, onSwitch}) => {
 
-  const [toggle, setToggle] = useState(false)
-  const [background, setBackground] = useState(false)
+const Header = () => {
 
-  const handleToggle = ()=>{
-    setToggle(!toggle)
-  }
+  // const [toggle, setToggle] = useState(false)
+  // const [background, setBackground] = useState(false)
+
+  // const handleToggle = ()=>{
+  //   setToggle(!toggle)
+  // }
+
+  const {theme, toggleTheme, switchBtn} = useContext(ThemeContext)
 
 
   return (
     
-      <header data-theme={myTheme}>
+      <header data-theme={theme}>
 
         <div className="container --flex-between">
 
@@ -40,13 +45,13 @@ const Header = ({myTheme, onToggleTheme, onSwitch}) => {
         </nav>
 
         {/* toggle */}
-        <div onClick={onToggleTheme}>
+        <div onClick={toggleTheme}>
 
           <span className="toggle-btn">
 
             <FaMoon color="pink" size={16} />
             <FaSun color="yellow" size={16} />
-            <div className={onSwitch ? "ball move" : "ball"}></div>
+            <div className={switchBtn ? "ball move" : "ball"}></div>
 
           </span>
 {/*         
